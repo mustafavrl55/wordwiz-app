@@ -4,11 +4,8 @@ const Section = ({ data, setData }) => {
   // cpoy için
   const textareaRef = useRef(null);
 
-
-
   const handleChange = (event) => {
     setData(event.target.value);
-
   };
 
   // copy
@@ -28,20 +25,19 @@ const Section = ({ data, setData }) => {
   const handleConvertToLowerCase = () => {
     setData(data.toLowerCase());
   };
- // büyük harf
+  // büyük harf
   const handleConvertToUpperCase = () => {
     const newText = data.toUpperCase(); // Metni büyük harfe çevir
     setData(newText);
   };
 
-
-  // boşluk 
+  // boşluk
 
   const removeExtraSpaces = () => {
     // Boşlukları temizleme işlemi burada yapılacak
-    
-    const cleanedText = data.replace(/\s+/g, ' ');
-    setData(cleanedText)
+
+    const cleanedText = data.replace(/\s+/g, " ");
+    setData(cleanedText);
   };
 
   return (
@@ -53,9 +49,9 @@ const Section = ({ data, setData }) => {
         cols="100"
         rows="8"
         ref={textareaRef}
-        value={data}
+        defaultValue={data}
         onChange={(e) => handleChange(e)}
-      >  </textarea>
+      ></textarea>
       <div className="mt-6 flex flex-wrap justify-start items-center gap-4 opacity-70">
         <button
           className="text-white bg-[#0d6efd] dark:bg-[#0891b2] rounded-md px-4 py-2 "
@@ -69,7 +65,10 @@ const Section = ({ data, setData }) => {
         >
           Convert to Lowercase
         </button>
-        <button className="text-white bg-[#0d6efd] dark:bg-[#0891b2] rounded-md px-4 py-2 "  onClick={() =>  removeExtraSpaces()} >
+        <button
+          className="text-white bg-[#0d6efd] dark:bg-[#0891b2] rounded-md px-4 py-2 "
+          onClick={() => removeExtraSpaces()}
+        >
           Remove Extra Spaces
         </button>
         <button
@@ -84,9 +83,7 @@ const Section = ({ data, setData }) => {
         >
           Clear Text
         </button>
-        
       </div>
-      
     </div>
   );
 };
