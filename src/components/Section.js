@@ -50,6 +50,7 @@ const Section = ({ data, setData }) => {
         rows="8"
         ref={textareaRef}
         defaultValue={data}
+        value={data}
         onChange={(e) => handleChange(e)}
       ></textarea>
       <div className="mt-6 flex flex-wrap justify-start items-center gap-4 opacity-70">
